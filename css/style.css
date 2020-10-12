@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f4f3;
+}
+
+header {
+    border-bottom: 2px solid #bbb;
+}
+
+#logo{
+    height: 90px;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    pointer-events: none;
+    z-index: -2;
+}
+.alert {
+    top: 80px;
+    z-index: 9999;
+    text-transform: capitalize;
+    animation: 2s 2 alternate alert;
+    max-width: 200px;
+    text-align: center;
+}
+
+.edit-mode {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* ============================ Element ============================*/
+
+.element {
+    background: white;
+    border: 2px solid #006300;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    animation: 0.4s element ease-in-out;
+}
+
+.element.current-slide{
+    background: red;
+    border: 2px solid black;
+    z-index: 9999;
+}
+
+.areas {
+    border-radius: 50%;
+    transform: rotate(45deg);
+    overflow: hidden;
+    user-select: none;
+}
+
+.element-group {
+    visibility: hidden;
+}
+
+.element:hover .element-group{
+    visibility: visible;
+}
+
+[data-area] {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00bf00;
+    color: #003100;
+}
+
+[data-area].linked {
+    background: white;
+    color: black;
+}
+
+[data-area]:hover {
+    filter: brightness(.8);
+}
+
+[data-area] * {
+    transform: rotate(-45deg)
+}
+
+[data-area='2'] {
+    left: 50%;
+    border-left: 2px solid #fff;
+}
+
+[data-area='3'] {
+    left: 50%;
+    top: 50%;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+[data-area='4'] {
+    top: 50%;
+    border-top: 2px solid #fff;
+}
+
+.control {
+    position: absolute;
+    width: 220%;
+    transform: translateY(-50%);
+    left: -60%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/**
+clone
+ */
+.clone{
+    border-radius: 50%;
+    background-color: #556688;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    pointer-events: none;
+    z-index: 20;
+    color: white;
+}
+
+/* ============================ Link ============================*/
+
+#links {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+line {
+    cursor: pointer;
+    stroke: black;
+    stroke-width: 4;
+    -webkit-animation: 5s line;
+    -o-animation: 5s line;
+    animation: 3s line;
+}
+
+line.selected {
+    stroke: red;
+    stroke-dasharray: 10;
+    stroke-linecap: round;
+    animation: selectedLink 20s linear infinite;
+}
+
+
+/* ============================ Modal ============================*/
+.modal {
+    display: block;
+}
+
+.modal-dialog {
+    max-width: 75%;
+    margin-top: 70px;
+}
+
+/* ============================ View ============================*/
+
+.view-mode {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 67px;
+}
+
+.view-mode .slide-container {
+    width: 100%;
+    height: 100%;
+    padding: 50px 8%;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.view-mode .slide {
+    width: 84%;
+    height: calc(100% - 120px);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    overflow-y: auto;
+    border: 3px solid #7a7a7a;
+}
+
+.view-mode .slide img {
+    width: 100%;
+}
+
+.view-mode .slide-controls {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-mode .slide-controls * {
+    width: 160px;
+    height: 40px;
+    text-align: left;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.view-mode .slide-controls * {
+    margin-top: 15px;
+}
+/**
+scroll bar
+ */
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+    z-index: 1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(270deg, #4fd0fe 0, #42acfd);
+    border: 2px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #337ab7;
+}
+
+/**
+mini map
+ */
+.mini-map {
+    position: absolute;
+    background: white;
+    top: 70px;
+    right: 25px;
+    transform: scale(0.22);
+    transform-origin: right top;
+    z-index: 9999;
+    border: 5px solid #007bff;
+    cursor: pointer;
+}
+
+.mini-map *{
+    visibility: hidden;
+}
+
+.mini-map .element, .mini-map line{
+    visibility: visible;
+}
+
+.mini-map .element{
+    cursor: grab;
+}

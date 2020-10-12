@@ -1,0 +1,180 @@
+/**
+alert
+ */
+@keyframes alert {
+    0% {
+        left: -300px;
+        opacity: 0.2;
+    }
+    75% {
+        left: 0;
+        opacity: 0.85;
+    }
+}
+
+
+/**
+element
+ */
+@keyframes element {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/**
+ * Init Link
+ */
+@keyframes line {
+    from {
+        stroke-dashoffset: 3000;
+        stroke-dasharray: 3000;
+    }
+}
+
+/**
+select link
+ */
+@keyframes selectedLink {
+    from {
+        stroke-dashoffset: -100%;
+    }
+}
+
+
+/*modal*/
+.modal-enter-active, .modal-leave-active {
+    transition: all 0.7s;
+}
+
+.modal-enter, .modal-leave-to {
+    transform: scale(0);
+    opacity: 0.8;
+}
+
+/**
+ * Fade Animation
+ */
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.8s ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter {
+    transform: scale(0);
+}
+
+.fade-leave-to {
+    transform: scale(1);
+}
+
+/**
+ * control
+ */
+.control-enter-active,
+.control-leave-active {
+    transition: all 0.4s ease-in-out;
+}
+
+.control-enter,
+.control-leave-to {
+    opacity: 0;
+}
+
+.control-enter {
+    transform: translateX(100px);
+}
+
+.control-leave-to {
+    transform: translateX(-100px);
+}
+
+/**
+ * Bottom Animation
+ */
+.bottom-enter-active,
+.bottom-leave-active {
+    transition: all 0.8s ease-in-out;
+}
+
+.bottom-enter,
+.bottom-leave-to {
+    opacity: 0;
+}
+
+.bottom-enter {
+    transform: translateY(100%);
+}
+
+.bottom-leave-to {
+    transform: translateY(-100%);
+}
+
+/**
+ * Top Animation
+ */
+.top-enter-active,
+.top-leave-active {
+    transition: all 0.8s ease-in-out;
+}
+
+.top-enter,
+.top-leave-to {
+    opacity: 0;
+}
+
+.top-enter {
+    transform: translateY(-100%);
+}
+
+.top-leave-to {
+    transform: translateY(100%);
+}
+
+/**
+ * Left Animation
+ */
+.left-enter-active,
+.left-leave-active {
+    transition: all 0.8s ease-in-out;
+}
+
+.left-enter,
+.left-leave-to {
+    opacity: 0;
+}
+
+.left-enter {
+    transform: translateX(-100%);
+}
+
+.left-leave-to {
+    transform: translateX(100%);
+}
+
+/**
+ * Right Animation
+ */
+.right-enter-active,
+.right-leave-active {
+    transition: all 0.8s ease-in-out;
+}
+
+.right-enter,
+.right-leave-to {
+    opacity: 0;
+}
+
+.right-enter {
+    transform: translateX(100%);
+}
+
+.right-leave-to {
+    transform: translateX(-100%);
+}
